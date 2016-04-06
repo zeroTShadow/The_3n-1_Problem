@@ -1,0 +1,38 @@
+# The_3n-1_Problem
+import java.util.*;
+import java.io.*;
+class Main
+{
+  public static void main(String arg[])
+  {
+    Scanner sc=new Scanner(System.in);
+    while(sc.hasNext())
+    {
+      int a=sc.nextInt(), b=sc.nextInt();
+      System.out.print(a + " " + b + " ");
+      solveProblem(Math.min(a,b),Math.max(a,b));
+    }
+  }
+  public static void solveProblem(int a, int b)
+  {
+    int curMax = 1;
+    for(int i=a;i<=b;i++)
+    {
+      int cycle=1,n=i;
+      while(n!=1)
+      {
+        if(n%2==1)
+        {
+          n = n+n/2+1;
+          cycle++;
+        }
+        else
+          n=n/2;
+        cycle++;
+      }
+      if(cycle>curMax)
+        curMax=cycle;
+    }
+    System.out.println(curMax);
+  }
+}
