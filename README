@@ -1,0 +1,5 @@
+java code
+UVa 100
+A simple brute force algorithm following the description of the problem. 
+A small twist was added when n is odd. Instead of performing 3n+1, then n/2. n+n/2+1 was used instead to 
+avoid overflowing the int variable. 
